@@ -45,6 +45,8 @@ services:
       POSTGRES_USER: airflow
       POSTGRES_PASSWORD: airflow
       POSTGRES_DB: airflow
+      TZ: Asia/Kolkata
+      PGTZ: Asia/Kolkata
     volumes:
       - postgres-airflow-data:/var/lib/postgresql/data
     healthcheck:
@@ -58,6 +60,8 @@ services:
     image: postgres:15
     container_name: postgres-staging
     environment:
+      TZ: Asia/Kolkata
+      PGTZ: Asia/Kolkata
       POSTGRES_USER: staging_user
       POSTGRES_PASSWORD: staging_pass
       POSTGRES_DB: staging_db
