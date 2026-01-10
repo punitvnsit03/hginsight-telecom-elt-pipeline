@@ -32,7 +32,7 @@ with DAG(
         task_id='extract_and_load_to_staging',
         python_callable=extract_and_load_to_staging,
         op_kwargs={
-            'source_url': 'https://github.com/punitvnsit03/hginsight-telecom-elt-pipeline/blob/main/data/raw/customer_churn.csv',
+            'source_url': '/opt/airflow/data/raw/customer_churn.csv',
             'local_path': '/opt/airflow/data/raw/customer_churn.csv'
         }
     )
