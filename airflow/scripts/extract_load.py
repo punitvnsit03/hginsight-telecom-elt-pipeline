@@ -22,7 +22,14 @@ def extract_and_load_to_staging(source_url, local_path):
         local_path = source_url
 
     # Read CSV
-    df = pd.read_csv(local_path)
+    df = pd.read_csv(
+        local_path,
+        on_bad_lines='skip',           # Skip bad lines
+        quotechar='"',                 # Standard quote character
+        escapechar='\\',               # Escape backslashes
+        skipinitialspace=True,         # Ignore spaces after delimiters
+        engine='python'                # More flexible parser (slower but handles edge cases)
+    )
     print(f"Extracted {len(df)} records with {len(df.columns)} columns")
 
     # Load to PostgreSQL staging
