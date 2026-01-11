@@ -131,7 +131,7 @@ services:
     image: metabase/metabase:latest
     container_name: metabase
     ports:
-      - "8088:3000"  # Changed port to avoid conflict
+      - "8090:3000"  # Changed port to avoid conflict
     environment:
       MB_DB_TYPE: postgres
       MB_DB_DBNAME: staging_db
